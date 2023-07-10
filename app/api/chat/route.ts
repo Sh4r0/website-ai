@@ -29,7 +29,7 @@ export async function POST(req: Request) {
   const { messages } = await req.json()
 
   const response = await Hf.textGenerationStream({
-    model: 'tiiuae/falcon-40b',
+    model: 'openchat/openchat_8192',
     inputs: buildPrompt(messages),
     parameters: {
       max_new_tokens: 200,
